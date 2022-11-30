@@ -1,87 +1,71 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import FlareSharpIcon from "@mui/icons-material/FlareSharp";
-import HomeIcon from "@mui/icons-material/Home";
-import AddAlertIcon from "@mui/icons-material/AddAlert";
-import InfoIcon from "@mui/icons-material/Info";
-import StarBorderPurple500Icon from "@mui/icons-material/StarBorderPurple500";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import MenuIcon from "@mui/icons-material/Menu";
 
-export default function NavBar() {
-  return (
-    <Box sx={{ flexGrow: 1, widht: "100vh" }}>
-      <AppBar position="static">
-        <Typography
-          variant="h2"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <FlareSharpIcon fontSize="Large" /> Association des Hunters d'Europe
-          <FlareSharpIcon fontSize="Large" />{" "}
-        </Typography>
-        <Toolbar
-          style={{
-            display: "flex",
-            justifyContent: "space-around",
-            fontSize: "1.5rem",
-          }}
-        >
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "flex",
-              alignItems: "center",
-            }}
-            to="/"
-          >
-            <HomeIcon />
-            Home
-          </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "flex",
-              alignItems: "center",
-            }}
-            to="/zodiacs"
-          >
-            <StarBorderPurple500Icon />
-            Les Zodiacs
-          </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "flex",
-              alignItems: "center",
-            }}
-            to="/infos"
-          >
-            <InfoIcon />
-            Informations
-          </Link>
-          <Link
-            style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "flex",
-              alignItems: "center",
-            }}
-            to="/signalement"
-          >
-            <AddAlertIcon />
-            Signalement
-          </Link>
-        </Toolbar>
-      </AppBar>
+export default function MenuBar() {
+  const [state, setState] = React.useState({
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const linkStyle = {
+    textDecoration: "none",
+    fontSize: "1.5rem",
+    color: "white",
+    padding: "2rem 1rem 2rem",
+  };
+  const list = (anchor) => (
+    <Box
+      sx={{ width: 250, display: "flex", flexDirection: "column" }}
+      role="menu"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <Link style={linkStyle} to="/">
+        Home
+      </Link>
+      <Link style={linkStyle} to="/zodiacs">
+        Les Zodiacs
+      </Link>
+      <Link style={linkStyle} to="/infos">
+        Informations
+      </Link>
+      <Link style={linkStyle} to="/signalement">
+        Signalement
+      </Link>
     </Box>
+  );
+
+  return (
+    <div style={{ display: "flex" }}>
+      <React.Fragment key="right">
+        <Button
+          sx={{ color: "white", padding: 0 }}
+          onClick={toggleDrawer("right", true)}
+        >
+          <MenuIcon />
+        </Button>
+        <Drawer
+          anchor="right"
+          open={state.right}
+          onClose={toggleDrawer("right", false)}
+        >
+          {list("right")}
+        </Drawer>
+      </React.Fragment>
+    </div>
   );
 }
