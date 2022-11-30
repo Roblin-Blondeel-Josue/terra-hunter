@@ -15,14 +15,16 @@ import {
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import MeteoBar from "../components/MeteoBar";
+import InterviewModal from "../components/ModalInterview";
 import news from "../data/news.json";
 
 function HomePage() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const nouvelle = news.data;
-  const cardStyleMd = { width: "40vw", height: "80vh" };
-  const cardStyleXS = { width: "90vw", height: "100vh", marginBottom: "2rem" };
+  const cardStyleMd = { width: "40vw", height: "auto" };
+  const cardStyleXS = { width: "90vw", height: "auto", marginBottom: "2rem" };
+
   return (
     <div
       sx={{
@@ -34,7 +36,7 @@ function HomePage() {
         minWidth: "90vw",
       }}
     >
-      <Typography variant="h3" align="center" sx={{ padding: "1rem" }}>
+      <Typography variant="h4" align="center" sx={{ padding: "1rem" }}>
         Les actualités des Hunters
       </Typography>
       <Stack
@@ -46,8 +48,8 @@ function HomePage() {
         <Card sx={matches ? cardStyleXS : cardStyleMd}>
           <CardHeader
             align="center"
-            sx={{ bgcolor: "primary.main", padding: "1rem 0rem" }}
-            title={<Typography variant="h4">Actualité Principale</Typography>}
+            sx={{ bgcolor: "primary.main", padding: "0.5rem 0rem" }}
+            title={<Typography variant="h6">Actualité Principale</Typography>}
           />
           <CardMedia
             component="img"
@@ -57,23 +59,24 @@ function HomePage() {
           />
           <CardContent>
             <Typography
-              variant="h5"
+              variant="h6"
               style={{ borderBottom: "2px solid #FAF7FF" }}
             >
-              Nayden Pokrovs
+              Nayden "Dukh" Pokrovs
             </Typography>
             <Typography variant="body1">
               Voici le nom qui est dans toutes les bouches. Le mage alchimiste
-              est le nouveau Zodiaque du poisson. Decouvrez son interview ici.
+              est le nouveau Zodiaque du poisson.
+              <InterviewModal />
             </Typography>
           </CardContent>
         </Card>
         <Card sx={matches ? cardStyleXS : cardStyleMd}>
           <CardHeader
             align="center"
-            sx={{ bgcolor: "primary.main", padding: "1rem 0rem" }}
+            sx={{ bgcolor: "primary.main", padding: "0.5rem 0rem" }}
             title={
-              <Typography variant="h4" align="center">
+              <Typography variant="h6" align="center">
                 Les autres Actualités
               </Typography>
             }
@@ -87,7 +90,7 @@ function HomePage() {
                     <ListItemAvatar>
                       <Avatar
                         alt="arrow"
-                        src="./png/iconfutur.png"
+                        src="./iconfutur.png"
                         style={{ backgroundColor: "#FAF7FF" }}
                       />
                     </ListItemAvatar>

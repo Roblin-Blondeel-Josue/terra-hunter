@@ -4,7 +4,7 @@
       padding: 0;
       box-sizing: border-box;
       scrollbar-width: auto;
-      scrollbar-color: #D9C468 #FDF0CA;
+      scrollbar-color: #5f1e00 #0d0d0d;
   }
 
   /* Chrome, Edge, and Safari */
@@ -14,11 +14,11 @@
   }
 
   *::-webkit-scrollbar-track {
-      background: #FDF0CA;
+      background: #0d0d0d;
   }
 
   *::-webkit-scrollbar-thumb {
-      background-color: #D9C468;
+      background-color: #5f1e00;
       border-radius: 25px;
   }
 

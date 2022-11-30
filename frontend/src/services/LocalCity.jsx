@@ -12,7 +12,7 @@ async function getCity(lat, lon) {
   const response = await axios.get(
     `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=2&appid=1cc5285599050dc0e2f684b26fef2d7f`
   );
-  const city = response.data;
+  const city = response.data[0].name;
   return city;
 }
 export default async function GetLocalCity() {
