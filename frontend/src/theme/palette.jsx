@@ -17,11 +17,11 @@ const GREY = {
 };
 
 const PRIMARY = {
-  lighter: "#df9e80",
-  light: "#cb6333",
-  main: "#BE3C00",
-  dark: "#983000",
-  darker: "#5f1e00",
+  lighter: "#9f7866",
+  light: "#7f4b33",
+  main: "#5f1e00",
+  dark: "#4c1800",
+  darker: "#391200",
   contrastText: "#fff",
 };
 
@@ -81,13 +81,13 @@ const palette = {
   grey: GREY,
   divider: alpha(GREY[500], 0.24),
   text: {
-    primary: GREY[800],
-    secondary: GREY[600],
-    disabled: GREY[500],
+    primary: "#FAF7FF",
+    secondary: "#fbf9ff",
+    disabled: "#c8c6cc",
   },
   background: {
-    paper: "#EDE9D0",
-    default: "#F8F2CB",
+    paper: "#090300",
+    default: "#0d0d0d",
     neutral: GREY[200],
   },
   action: {
