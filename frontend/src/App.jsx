@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import ThemeProvider from "./theme";
-import NavBar from "./components/NavBar";
 import HomePage from "./pages/homePage";
 import InfosPage from "./pages/InfoPage";
 import ZodiacsPage from "./pages/zodiacPage";
@@ -11,7 +11,7 @@ import SignalPage from "./pages/signalPage";
 function App() {
   return (
     <ThemeProvider>
-      <NavBar />
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/infos" element={<InfosPage />} />
