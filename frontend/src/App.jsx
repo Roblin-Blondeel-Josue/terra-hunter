@@ -7,6 +7,7 @@ import HomePage from "./pages/homePage";
 import InfosPage from "./pages/InfoPage";
 import ZodiacsPage from "./pages/zodiacPage";
 import SignalPage from "./pages/signalPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/zodiacs" element={<ZodiacsPage />} />
         <Route path="/signal" element={<SignalPage />} />
       </Routes>
+      <Footer />
     </ThemeProvider>
   );
 }

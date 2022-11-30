@@ -10,7 +10,7 @@ async function getCoords() {
 }
 async function getCity(lat, lon) {
   const response = await axios.get(
-    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=2&appid=1cc5285599050dc0e2f684b26fef2d7f`
+    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=2&appid=11725dca25ab2ed2271b1c1aa5399493`
   );
   const city = response.data[0].name;
   return city;

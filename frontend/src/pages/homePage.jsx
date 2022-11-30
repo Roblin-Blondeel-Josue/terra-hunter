@@ -5,8 +5,7 @@ import {
   ListItemText,
   Stack,
   Typography,
-  Avatar,
-  ListItemAvatar,
+  ListItemIcon,
   Card,
   CardContent,
   CardMedia,
@@ -14,6 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import MeteoBar from "../components/MeteoBar";
 import InterviewModal from "../components/ModalInterview";
 import news from "../data/news.json";
@@ -22,7 +22,7 @@ function HomePage() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const nouvelle = news.data;
-  const cardStyleMd = { width: "40vw", height: "auto" };
+  const cardStyleMd = { width: "50vw", height: "auto" };
   const cardStyleXS = { width: "90vw", height: "auto", marginBottom: "2rem" };
 
   return (
@@ -87,13 +87,12 @@ function HomePage() {
               {nouvelle.map((element) => {
                 return (
                   <ListItem>
-                    <ListItemAvatar>
-                      <Avatar
-                        alt="arrow"
-                        src="./iconfutur.png"
-                        style={{ backgroundColor: "#FAF7FF" }}
+                    <ListItemIcon>
+                      <PlayArrowIcon
+                        fontSize="Large"
+                        sx={{ color: "inherit" }}
                       />
-                    </ListItemAvatar>
+                    </ListItemIcon>
                     <ListItemText
                       primary={
                         <Typography variant="h6">{element.titre}</Typography>
