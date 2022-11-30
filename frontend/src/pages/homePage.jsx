@@ -24,6 +24,7 @@ function HomePage() {
   const nouvelle = news.data;
   const cardStyleMd = { width: "40vw", height: "auto" };
   const cardStyleXS = { width: "90vw", height: "auto", marginBottom: "2rem" };
+
   return (
     <div
       sx={{
@@ -53,7 +54,7 @@ function HomePage() {
           <CardMedia
             component="img"
             height="60%"
-            image="./nayden.png"
+            image="./png/nayden.png"
             alt="Zodiac Nayden"
           />
           <CardContent>
@@ -94,7 +95,9 @@ function HomePage() {
                       />
                     </ListItemAvatar>
                     <ListItemText
-                      primary={element.titre}
+                      primary={
+                        <Typography variant="h6">{element.titre}</Typography>
+                      }
                       secondary={element.informations}
                     />
                   </ListItem>
