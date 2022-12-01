@@ -13,7 +13,7 @@ import {
   useTheme,
 } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import MeteoBar from "../components/MeteoBar";
 import InterviewModal from "../components/ModalInterview";
 import news from "../data/news.json";
@@ -22,9 +22,21 @@ function HomePage() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const nouvelle = news.data;
-  const cardStyleMd = { width: "50vw", height: "auto" };
-  const cardStyleXS = { width: "90vw", height: "auto", marginBottom: "2rem" };
-
+  const cardStyleMd = {
+    width: "40vw",
+    height: "80vh",
+    boxShadow: 5,
+    borderRadius: "5px",
+    background:
+      "radial-gradient(circle, #5f1e00, #52121c, #391325, #1f1420, #0d0d0d)",
+  };
+  const cardStyleXS = {
+    width: "90vw",
+    height: "70vh",
+    marginBottom: "2rem",
+    background:
+      "radial-gradient(circle, #5f1e00, #52121c, #391325, #1f1420, #0d0d0d)",
+  };
   return (
     <div
       sx={{
@@ -42,7 +54,7 @@ function HomePage() {
       <Stack
         className="Home"
         direction={{ sm: "column", md: "row" }}
-        spacing={2}
+        spacing="20vh"
         sx={{ marginLeft: "5vw", marginRight: "5vw", widht: "auto" }}
       >
         <Card sx={matches ? cardStyleXS : cardStyleMd}>
@@ -54,7 +66,7 @@ function HomePage() {
           <CardMedia
             component="img"
             height="60%"
-            image="./png/nayden.png"
+            image="https://cdn.discordapp.com/attachments/753953581027033158/1047157576816672818/1.png"
             alt="Zodiac Nayden"
           />
           <CardContent>
@@ -66,7 +78,8 @@ function HomePage() {
             </Typography>
             <Typography variant="body1">
               Voici le nom qui est dans toutes les bouches. Le mage alchimiste
-              est le nouveau Zodiaque du poisson.
+              est le nouveau Zodiaque du poisson. Il a bien voulu répondre à nos
+              journalistes.
               <InterviewModal />
             </Typography>
           </CardContent>
@@ -81,16 +94,15 @@ function HomePage() {
               </Typography>
             }
           />
-          <CardContent>
+          <CardContent style={{ overflowY: "scroll" }}>
             <MeteoBar />
             <List>
               {nouvelle.map((element) => {
                 return (
                   <ListItem>
                     <ListItemIcon>
-                      <PlayArrowIcon
-                        fontSize="Large"
-                        sx={{ color: "inherit" }}
+                      <DoubleArrowIcon
+                        sx={{ color: "text.primary", fontSize: "2rem" }}
                       />
                     </ListItemIcon>
                     <ListItemText

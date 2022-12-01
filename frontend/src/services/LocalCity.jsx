@@ -10,9 +10,9 @@ async function getCoords() {
 }
 async function getCity(lat, lon) {
   const response = await axios.get(
-    `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=2&appid=11725dca25ab2ed2271b1c1aa5399493`
+    `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${lon}&apiKey=b58f81d072744b5d8e4cb63709868c08`
   );
-  const city = response.data[0].name;
+  const { city } = response.data.features[0].properties;
   return city;
 }
 export default async function GetLocalCity() {
