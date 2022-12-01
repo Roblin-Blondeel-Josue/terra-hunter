@@ -77,6 +77,7 @@ export default function NewsCard() {
         }
       />
       <CardContent>
+        <MeteoBar />
         <NewSecond />
       </CardContent>
     </Card>
