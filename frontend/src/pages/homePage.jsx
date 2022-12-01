@@ -106,7 +106,9 @@ function HomePage() {
                       />
                     </ListItemIcon>
                     <ListItemText
-                      primary={element.titre}
+                      primary={
+                        <Typography variant="h6">{element.titre}</Typography>
+                      }
                       secondary={element.informations}
                     />
                   </ListItem>
