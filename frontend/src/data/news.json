@@ -1,29 +1,21 @@
 {   
     "data":[
     {
-        "titre": "Nouvelle boîte au Pôle Nord",
-        "informations": "Len'ji, le zodiac du verseau et de ces dames, annonce ouvrir une nouvelle boite de nuit[...]",
-        "icon" : 1
+        "titre": "Nouvelle boîte au Pôle Nord :",
+        "informations": "Len'ji, chef des Zodiacs, reprend son invasion du monde grâce à son réseau de boites de nuit. Sa dernière création vient d'ouvrir à l'Ouest de Qaanaaq (Groenland)."
+      },
+    {
+        "titre": "Départ de la Hunter Sept :",
+        "informations": "L'ancien chef du bastion d'Amazonie a décidée de prendre sa retraite de Hunter. La gunwoman désire s'éloigner des combats pour s'occuper pleinement de sa fille."
+      },
+    {
+        "titre": "La Fondation Graal change de direction :",
+        "informations": "Amadael Arthoria Pendraig a remplacé Asmodael Kirey, à la tête de cette ancienne fondation, en charge de la conservation de nombreux objets anciens."
+        
     },
     {
-        "titre": "Bob",
-        "informations": "bob1",
-        "icon" : 1
-    },
-    {
-        "titre": "Bob",
-        "informations": "bob2",
-        "icon" : null
-    },
-    {
-        "titre": "Bob",
-        "informations": "bob3",
-        "icon" : 1
-    },
-    {
-        "titre": "Bob",
-        "informations": "bob4",
-        "icon" : null
-    }
+        "titre": "Web 5 : nouvelle ère",
+        "informations": "Via un communiqué, la firme Busby techs -leader dans l'armement et les nouvelles technologies- a annoncée la sortié prochaine du Web5, remplaçant les anciens protocoles."
+      }
 ]
 }
