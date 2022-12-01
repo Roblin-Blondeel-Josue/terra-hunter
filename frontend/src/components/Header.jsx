@@ -21,8 +21,15 @@ export default function Header() {
         <Typography
           variant="h3"
           align="flex-start"
-          sx={{ paddingLeft: "1rem", color: "palette.text.primary" }}
-          style={{ borderBottom: "2px solid #FAF7FF" }}
+          sx={{
+            padding: "0rem 1rem",
+            color: "palette.text.primary",
+            borderRadius: "5px",
+          }}
+          style={{
+            borderBottom: "2px solid #FAF7FF",
+            borderRight: "2px solid #FAF7FF",
+          }}
         >
           Association des Hunters d'Europe
         </Typography>
