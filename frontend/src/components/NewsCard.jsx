@@ -87,20 +87,7 @@ export default function NewsCard() {
   };
 
   return (
-    <Stack
-      className="News"
-      direction={{ sm: "column", md: "row" }}
-      spacing="20vh"
-      sx={{ marginLeft: "5vw", marginRight: "5vw", widht: "auto" }}
-    >
-      <Slide
-        direction="right"
-        in={checked}
-        container={containerRef.current}
-        timeout={500}
-      >
-        {NewsPrincipal}
-      </Slide>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <Button
         onClick={handleChange}
         variant="text"
@@ -110,9 +97,28 @@ export default function NewsCard() {
           Bienvenue
         </Typography>
       </Button>
-      <Slide direction="left" in={checked} container={containerRef.current}>
-        {NewSecondary}
-      </Slide>
-    </Stack>
+      <Stack
+        className="News"
+        direction={{ sm: "column", md: "row" }}
+        spacing="20vh"
+        sx={
+          checked
+            ? { marginLeft: "5vw", marginRight: "5vw", widht: "auto" }
+            : { display: "none" }
+        }
+      >
+        <Slide
+          direction="right"
+          in={checked}
+          container={containerRef.current}
+          timeout={500}
+        >
+          {NewsPrincipal}
+        </Slide>
+        <Slide direction="left" in={checked} container={containerRef.current}>
+          {NewSecondary}
+        </Slide>
+      </Stack>
+    </div>
   );
 }

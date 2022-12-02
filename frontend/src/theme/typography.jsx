@@ -1,11 +1,11 @@
 // ----------------------------------------------------------------------
 
 export function remToPx(value) {
-  return Math.round(parseFloat(value) * 16);
+  return Math.round(parseFloat(value) * 14);
 }
 
 export function pxToRem(value) {
-  return `${value / 16}rem`;
+  return `${value / 14}rem`;
 }
 
 export function responsiveFontSizes({ sm, md, lg }) {
@@ -24,7 +24,7 @@ export function responsiveFontSizes({ sm, md, lg }) {
 
 // ----------------------------------------------------------------------
 
-const FONT_PRIMARY = "'Spectral', serif;"; // Google Font
+const FONT_PRIMARY = "'Teko', sans-serif"; // Google Font
 // const FONT_SECONDARY = 'CircularStd, sans-serif'; // Local Font
 
 const typography = {
