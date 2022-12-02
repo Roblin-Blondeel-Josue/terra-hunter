@@ -87,32 +87,68 @@ export default function NewsCard() {
   };
 
   return (
-    <Stack
-      className="News"
-      direction={{ sm: "column", md: "row" }}
-      spacing="20vh"
-      sx={{ marginLeft: "5vw", marginRight: "5vw", widht: "auto" }}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        justifyItems: "center",
+        alignItems: "center",
+      }}
     >
-      <Slide
-        direction="right"
-        in={checked}
-        container={containerRef.current}
-        timeout={500}
-      >
-        {NewsPrincipal}
-      </Slide>
       <Button
         onClick={handleChange}
         variant="text"
-        sx={!checked ? { display: "flex" } : { display: "none" }}
+        sx={
+          !checked
+            ? {
+                display: "flex",
+                alignItem: "center",
+                widht: "15vw",
+                borderRadius: "5px",
+                padding: "0vh 10vw",
+                margin: "25vh 0vh",
+                borderBottom: "2px solid #FAF7FF",
+                borderRight: "2px solid #FAF7FF",
+                boxShadow: 1,
+              }
+            : { display: "none" }
+        }
       >
         <Typography variant="h2" sx={{ color: "text.secondary" }}>
-          Bienvenue
+          Entrez.
         </Typography>
       </Button>
-      <Slide direction="left" in={checked} container={containerRef.current}>
-        {NewSecondary}
-      </Slide>
-    </Stack>
+      <Typography
+        variant="h4"
+        sx={
+          checked ? { display: "flex", padding: "1rem" } : { display: "none" }
+        }
+      >
+        Les actualités des Hunters
+      </Typography>
+      <Stack
+        className="News"
+        direction={{ sm: "column", md: "row" }}
+        spacing="20vh"
+        sx={
+          checked
+            ? { marginLeft: "5vw", marginRight: "5vw", widht: "auto" }
+            : { display: "none" }
+        }
+      >
+        <Slide
+          direction="right"
+          in={checked}
+          container={containerRef.current}
+          timeout={500}
+        >
+          {NewsPrincipal}
+        </Slide>
+        <Slide direction="left" in={checked} container={containerRef.current}>
+          {NewSecondary}
+        </Slide>
+      </Stack>
+    </div>
   );
 }

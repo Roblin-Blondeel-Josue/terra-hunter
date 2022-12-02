@@ -20,6 +20,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "@fontsource/expletus-sans": "^4.5.11",
     "dotenv": "^16.0.3",
     "react-scripts": "^2.1.3"
   }

@@ -36,7 +36,11 @@ export default function MenuBar() {
   };
   const list = (anchor) => (
     <Box
-      sx={{ width: 250, display: "flex", flexDirection: "column" }}
+      sx={{
+        width: "45vw",
+        display: "flex",
+        flexDirection: "column",
+      }}
       role="menu"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
