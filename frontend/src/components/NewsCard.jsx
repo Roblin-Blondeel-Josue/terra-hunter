@@ -87,16 +87,46 @@ export default function NewsCard() {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        justifyItems: "center",
+        alignItems: "center",
+      }}
+    >
       <Button
         onClick={handleChange}
         variant="text"
-        sx={!checked ? { display: "flex" } : { display: "none" }}
+        sx={
+          !checked
+            ? {
+                display: "flex",
+                alignItem: "center",
+                widht: "15vw",
+                borderRadius: "5px",
+                padding: "0vh 10vw",
+                margin: "25vh 0vh",
+                borderBottom: "2px solid #FAF7FF",
+                borderRight: "2px solid #FAF7FF",
+                boxShadow: 1,
+              }
+            : { display: "none" }
+        }
       >
         <Typography variant="h2" sx={{ color: "text.secondary" }}>
-          Bienvenue
+          Entrez.
         </Typography>
       </Button>
+      <Typography
+        variant="h4"
+        sx={
+          checked ? { display: "flex", padding: "1rem" } : { display: "none" }
+        }
+      >
+        Les actualités des Hunters
+      </Typography>
       <Stack
         className="News"
         direction={{ sm: "column", md: "row" }}
